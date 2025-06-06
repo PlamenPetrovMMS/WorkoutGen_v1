@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/item_background"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp">
+
+    <TextView
+        android:id="@+id/nameLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginBottom="5dp"
+        />
+    <TextView
+        android:id="@+id/exerciseNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PUSH-UP"
+        android:textStyle="bold|italic"
+        android:textColor="@color/white"
+        android:layout_toEndOf="@+id/nameLabelTextView"
+        android:layout_marginStart="15dp"
+        />
+    <TextView
+        android:id="@+id/levelLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Level:"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@+id/nameLabelTextView"
+        android:layout_alignEnd="@+id/nameLabelTextView"
+        />
+    <TextView
+        android:id="@+id/exerciseLevelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameLabelTextView"
+        android:layout_toEndOf="@+id/levelLabelTextView"
+        android:text="EASY"
+        android:textStyle="bold|italic"
+        android:textColor="@color/easy_level"
+        android:layout_marginStart="15dp"
+        />
+
+</RelativeLayout>

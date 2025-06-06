@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/createExerciseActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateExerciseActivity"
+    android:padding="10dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="NAME:"
+        android:textSize="@dimen/text_size1"
+        />
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/nameTextView"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:inputType="text"/>
+
+    <RelativeLayout
+        android:id="@+id/group1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_below="@+id/nameEditText"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/movementTypeTextView"
+            android:layout_width="@dimen/textview1_width"
+            android:layout_height="wrap_content"
+
+            android:text="MOVEMENT TYPE"
+            android:textSize="@dimen/text_size1"
+
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/movementTypeResultTextView"
+            android:layout_width="@dimen/textview2_width"
+            android:layout_height="wrap_content"
+
+            android:text="@string/defaultResultValue"
+            android:textSize="@dimen/text_size2"
+
+            android:layout_toEndOf="@+id/movementTypeTextView"
+            android:layout_centerVertical="true"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createMovementTypeButton"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="EDIT"
+            android:padding="5dp"
+            app:cornerRadius="5dp"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/main_red"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/group2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_below="@+id/group1">
+        <TextView
+            android:id="@+id/bodypartTypeTextView"
+            android:layout_width="@dimen/textview1_width"
+            android:layout_height="wrap_content"
+
+            android:text="BODYPART TYPE"
+            android:textSize="@dimen/text_size1"
+
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/bodypartTypeResultTextView"
+            android:layout_width="@dimen/textview2_width"
+            android:layout_height="wrap_content"
+
+            android:text="@string/defaultResultValue"
+            android:textSize="@dimen/text_size2"
+
+            android:layout_toEndOf="@+id/bodypartTypeTextView"
+
+            android:layout_centerVertical="true"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createBodypartTypeButton"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="EDIT"
+            android:padding="5dp"
+            app:cornerRadius="5dp"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/main_red"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/group3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_below="@+id/group2">
+        <TextView
+            android:id="@+id/symmetryTextView"
+            android:layout_width="@dimen/textview1_width"
+            android:layout_height="wrap_content"
+
+            android:text="SYMMETRY"
+            android:textSize="@dimen/text_size1"
+
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/symmetryResultTextView"
+            android:layout_width="@dimen/textview2_width"
+            android:layout_height="wrap_content"
+
+            android:text="@string/defaultResultValue"
+            android:textSize="@dimen/text_size2"
+
+            android:layout_toEndOf="@+id/symmetryTextView"
+
+            android:layout_centerVertical="true"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createSymmetryButton"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="EDIT"
+            android:padding="5dp"
+            app:cornerRadius="5dp"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/main_red"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/group4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_below="@+id/group3"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/levelTextView"
+            android:layout_width="@dimen/textview1_width"
+            android:layout_height="wrap_content"
+
+            android:text="LEVEL"
+            android:textSize="@dimen/text_size1"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/levelResultTextView"
+            android:layout_width="@dimen/textview2_width"
+            android:layout_height="wrap_content"
+
+            android:text="@string/defaultResultValue"
+            android:textSize="@dimen/text_size2"
+
+            android:layout_toEndOf="@+id/levelTextView"
+            android:layout_centerVertical="true"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createLevelButton"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="EDIT"
+            android:padding="5dp"
+            app:cornerRadius="5dp"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/main_red"
+            />
+    </RelativeLayout>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group4"
+        android:layout_centerHorizontal="true"
+        android:text="CREATE"
+        android:padding="10dp"
+        app:cornerRadius="5dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/main_red"
+        />
+
+
+</RelativeLayout>

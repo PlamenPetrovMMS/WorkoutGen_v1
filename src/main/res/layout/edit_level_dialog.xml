@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/easyLevelEditButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EASY"
+        android:padding="5dp"
+        app:cornerRadius="5dp"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mediumLevelEditButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEDIUM"
+        android:padding="5dp"
+        app:cornerRadius="5dp"
+        android:layout_below="@+id/easyLevelEditButton"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hardLevelEditButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HARD"
+        android:padding="5dp"
+        app:cornerRadius="5dp"
+        android:layout_below="@id/mediumLevelEditButton"/>
+
+</RelativeLayout>

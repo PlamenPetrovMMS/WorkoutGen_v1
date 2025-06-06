@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="15dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mainGenerateWorkoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GENERATE WORKOUT"
+            android:textColor="@color/white"
+            app:cornerRadius="5dp"
+            android:backgroundTint="@color/main_red"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addedExercisesButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADDED EXERCISES"
+            android:textColor="@color/white"
+            app:cornerRadius="5dp"
+            android:backgroundTint="@color/main_red"
+            android:layout_below="@+id/mainGenerateWorkoutButton"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createExerciseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CREATE EXERCISE"
+            android:textColor="@color/white"
+            app:cornerRadius="5dp"
+            android:layout_below="@+id/addedExercisesButton"
+            android:backgroundTint="@color/main_red"
+            />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

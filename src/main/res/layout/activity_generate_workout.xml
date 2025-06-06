@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GenerateWorkoutActivity"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/generatedWorkoutExercisesView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test\ntest\ntest\ntest\ntest"
+        android:textSize="18sp"
+        android:ems="19"
+        android:lines="26"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/exerciseAmountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercises"
+            android:textSize="20sp"
+            android:layout_alignBottom="@+id/exerciseAmountInput"
+            android:layout_centerVertical="true"
+            />
+        <EditText
+            android:id="@+id/exerciseAmountInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:gravity="center"
+            android:text="2"
+            android:inputType="number"
+            android:layout_toEndOf="@+id/exerciseAmountLabel"
+            android:singleLine="true"
+            android:maxLength="2"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveWorkoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAVE WORKOUT"
+            android:backgroundTint="@color/main_red"
+            app:cornerRadius="10dp"
+            android:layout_alignParentEnd="true"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/customizeWorkoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CUSTOMIZE"
+            android:backgroundTint="@color/main_red"
+            app:cornerRadius="10dp"
+            android:layout_below="@+id/saveWorkoutButton"
+            android:layout_alignStart="@+id/saveWorkoutButton"
+            android:layout_alignParentEnd="true"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/generateWorkoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GENERATE"
+            android:backgroundTint="@color/main_red"
+            app:cornerRadius="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/customizeWorkoutButton"
+            android:layout_alignStart="@+id/saveWorkoutButton"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

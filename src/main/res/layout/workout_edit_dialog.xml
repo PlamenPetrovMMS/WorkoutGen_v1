@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/editWorkoutLevelGroupLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/editWorkoutLevelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editWorkoutLevelLabelText"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/editWorkoutLevelResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/defaultResultValue"
+            android:textSize="@dimen/editWorkoutResultTextSize"
+
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editWorkoutLevelButton"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            app:cornerRadius="5dp"
+
+            android:text="@string/editWorkoutEditButtonText"
+
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/editWorkoutMovementGroupLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editWorkoutLevelGroupLayout">
+        <TextView
+            android:id="@+id/editWorkoutMovementLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editWorkoutMovementLabelText"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/editWorkoutMovementResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/defaultResultValue"
+            android:textSize="@dimen/editWorkoutResultTextSize"
+
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editWorkoutMovementButton"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            app:cornerRadius="5dp"
+
+            android:text="@string/editWorkoutEditButtonText"
+
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/editWorkoutBodypartGroupLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editWorkoutMovementGroupLayout">
+        <TextView
+            android:id="@+id/editWorkoutBodypartLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editWorkoutBodypartLabelText"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/editWorkoutBodypartResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/defaultResultValue"
+            android:textSize="@dimen/editWorkoutResultTextSize"
+
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editWorkoutBodypartButton"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            app:cornerRadius="5dp"
+
+            android:text="@string/editWorkoutEditButtonText"
+
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/editWorkoutButtonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editWorkoutBodypartGroupLayout">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editWorkoutApplyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/editWorkoutApplyButtonText"/>
+    </RelativeLayout>
+
+</RelativeLayout>
