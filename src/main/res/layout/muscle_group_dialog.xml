@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/dialogTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Muscle Groups"
+        android:textStyle="bold"
+        android:textColor="@color/dialogTitleColor"
+
+        android:layout_centerHorizontal="true"
+        />
+    <LinearLayout
+        android:id="@+id/dialogMuscleGroupLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/dialogTitleTextView">
+        <CheckBox
+            android:id="@+id/muscleGroupUpperbodyCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Upperbody"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+        <CheckBox
+            android:id="@+id/muscleGroupCoreCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Core"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+        <CheckBox
+            android:id="@+id/muscleGroupLowebodyCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Lowerbody"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+        <CheckBox
+            android:id="@+id/muscleGroupFullbodyCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Fullbody"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/dialogTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Categories"
+        android:textStyle="bold"
+        android:textColor="@color/dialogTitleColor"
+
+        android:layout_centerHorizontal="true"
+        />
+    <LinearLayout
+        android:id="@+id/dialogCategoriesLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/dialogTitleTextView">
+        <CheckBox
+            android:id="@+id/categoryStrengthCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Strength"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+        <CheckBox
+            android:id="@+id/categoryFlexibilityCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Flexibility"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+        <CheckBox
+            android:id="@+id/categoryRehabCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Rehab"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+        <CheckBox
+            android:id="@+id/categoryBalanceCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Balance"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+    </LinearLayout>
+
+</RelativeLayout>

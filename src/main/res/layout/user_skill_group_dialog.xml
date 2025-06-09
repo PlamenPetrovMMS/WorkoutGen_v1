@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/dialogTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="User Skill Group"
+        android:textStyle="bold"
+        android:textColor="@color/dialogTitleColor"
+
+        android:layout_centerHorizontal="true"
+        />
+    <LinearLayout
+        android:id="@+id/dialogUserSkillGroupLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/dialogTitleTextView">
+        <CheckBox
+            android:id="@+id/userSkillGroupBeginnerCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Beginner"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+        <CheckBox
+            android:id="@+id/userSkillGroupIntermediateCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Intermediate"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+        <CheckBox
+            android:id="@+id/userSkillGroupAdvancedCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Advanced"
+            android:textColor="@color/dialogOptionTextColor"
+
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

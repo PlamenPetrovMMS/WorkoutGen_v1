@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddExerciseActivity"
+    android:background="@color/white">
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/nameLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Name"
+            android:textStyle="bold"
+            android:textColor="@color/mainLabelsColor"
+
+            android:layout_marginTop="20dp"
+            />
+        <EditText
+            android:id="@+id/nameInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Enter exercise name"
+            android:textSize="17sp"
+
+            android:layout_below="@+id/nameLabelTextView"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/descriptionLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Description"
+            android:textStyle="bold"
+            android:textColor="@color/mainLabelsColor"
+
+            android:layout_below="@+id/nameInputEditText"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:id="@+id/descriptionInputEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descriptionLabelTextView"
+            android:hint="Enter exercise description"
+            android:lines="10"
+            android:ems="18"
+            android:gravity="start|top"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/categoryGroupLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionInputEditText">
+            <TextView
+                android:id="@+id/categoriesLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Categories"
+                android:textStyle="bold"
+                android:textColor="@color/mainLabelsColor"
+                />
+
+            <LinearLayout
+                android:id="@+id/categoryOptionsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/categoriesLabelTextView"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/noneCategoryBubble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="NONE"
+
+                    android:textColor="@color/addExerciseOptionTextColor"
+                    android:background="@drawable/option_bubble_background"
+                    />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editCategoriesButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/categoryOptionsLayout"
+                android:padding="0dp"
+                android:text="Edit"
+                app:cornerRadius="10dp"
+                android:backgroundTint="@color/addExerciseEditButtonColor"
+                android:textColor="@color/addExerciseEditButtonTextColor"
+                />
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/muscleGroupLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/categoryGroupLayout"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/muscleGroupsLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Muscle Groups"
+                android:textStyle="bold"
+                android:textColor="@color/mainLabelsColor"
+                />
+
+            <LinearLayout
+                android:id="@+id/muscleGroupOptionsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/muscleGroupsLabelTextView"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/noneMuscleGroupBubble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="NONE"
+
+                    android:textColor="@color/addExerciseOptionTextColor"
+                    android:background="@drawable/option_bubble_background"
+                    />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editMuscleGroupsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/muscleGroupOptionsLayout"
+                android:padding="0dp"
+                android:text="Edit"
+                app:cornerRadius="10dp"
+                android:backgroundTint="@color/addExerciseEditButtonColor"
+                android:textColor="@color/addExerciseEditButtonTextColor"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/userSkillGroupLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/muscleGroupLayout"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/userSkillGroupLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="User Skill Group"
+                android:textStyle="bold"
+                android:textColor="@color/mainLabelsColor"
+                />
+
+            <LinearLayout
+                android:id="@+id/userSkillGroupOptionsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/userSkillGroupLabelTextView"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/noneUserSkillGroupBubble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="NONE"
+
+                    android:textColor="@color/addExerciseOptionTextColor"
+                    android:background="@drawable/option_bubble_background"
+                    />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editUserSkillGroupButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/userSkillGroupOptionsLayout"
+                android:padding="0dp"
+                android:text="Edit"
+                app:cornerRadius="10dp"
+                android:backgroundTint="@color/addExerciseEditButtonColor"
+                android:textColor="@color/addExerciseEditButtonTextColor"
+                />
+
+        </RelativeLayout>
+
+
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Add exercise"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@color/addExerciseEditButtonColor"
+            android:textColor="@color/addExerciseEditButtonTextColor"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

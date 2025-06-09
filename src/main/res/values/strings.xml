@@ -1,27 +1,3 @@
 <resources>
-    <string name="app_name">WorkoutGenerator</string>
-
-    <!--  GLOBAL  -->
-
-    <string name="defaultResultValue">ANY</string>
-
-    <!--  EDIT WORKOUT DIALOG  -->
-
-    <string name="editWorkoutLevelLabelText">LEVEL</string>
-    <string name="editWorkoutMovementLabelText">MOVEMENT</string>
-    <string name="editWorkoutBodypartLabelText">BODYPART</string>
-    <string name="editWorkoutSymmetryLabelText">SYMMETRY</string>
-
-    <string name="editWorkoutEditButtonText">Edit</string>
-    <string name="editWorkoutApplyButtonText">Apply</string>
-
-
-    <!--  CREATE EXERCISE DIALOG  -->
-    <string name="createExerciseLevelLabelText">Level</string>
-    <string name="createExerciseMovementLabelText">MOVEMENT</string>
-    <string name="createExerciseBodypartLabelText">BODYPART</string>
-    <string name="createExerciseSymmetryLabelText">SYMMETRY</string>
-
-    <string name="createExerciseEditButtonText">Edit</string>
-    <string name="createExerciseCreateButtonText">Generate</string>
+    <string name="app_name">WorkoutGen_v2</string>
 </resources>
