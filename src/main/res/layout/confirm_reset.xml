@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/confirmResetLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+
+        android:text="Are you sure ?"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="@font/main_font"
+        android:letterSpacing="0.04"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/confirmResetLabel"
+        android:gravity="center_horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmResetYesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/black"
+
+            android:text="YES"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.1"
+
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmResetNoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/black"
+
+            android:text="NO"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.1"
+            />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

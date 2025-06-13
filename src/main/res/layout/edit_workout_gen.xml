@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:id="@+id/editGenDialogCategoryGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/editGenDialogCategoryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Category"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:fontFamily="@font/main_font"
+
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editGenDialogOpenCategorySelection"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/red"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/editGenDialogCategoryLabel"
+
+            app:icon="@drawable/baseline_edit_24"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconTint="@color/white"
+            />
+
+        <LinearLayout
+            android:id="@+id/editGenDialogCategoryLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/editGenDialogCategoryLabel"
+            android:layout_marginTop="10dp">
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/editGenDialogMuscleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editGenDialogCategoryGroup"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/editGenDialogMuscleGroupLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Muscle Group"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:fontFamily="@font/main_font"
+
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editGenDialogOpenMuscleGroupSelection"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/red"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/editGenDialogMuscleGroupLabel"
+
+            app:icon="@drawable/baseline_edit_24"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconTint="@color/white"
+            />
+
+        <LinearLayout
+            android:id="@+id/editGenDialogMuscleGroupLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/editGenDialogMuscleGroupLabel"
+            android:layout_marginTop="10dp">
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/editGenDialogSkillLevelGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editGenDialogMuscleGroup"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/editGenDialogSkillLevelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Skill Level"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:fontFamily="@font/main_font"
+
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editGenDialogOpenSkillLevelSelection"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/red"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/editGenDialogSkillLevelLabel"
+
+            app:icon="@drawable/baseline_edit_24"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconTint="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/skillLevelResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:background="@drawable/orange_box"
+
+            android:layout_below="@+id/editGenDialogSkillLevelLabel"
+            android:layout_marginTop="10dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/editGenDialogButtonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editGenDialogSkillLevelGroup"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editGenDialogCancelButton"
+            android:layout_width="@dimen/editWorkout_buttonWidth"
+            android:layout_height="wrap_content"
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/black"
+
+            android:text="CANCEL"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/editWorkout_buttonTextSize"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.1"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editGenDialogApplyButton"
+            android:layout_width="@dimen/editWorkout_buttonWidth"
+            android:layout_height="wrap_content"
+
+            android:layout_toEndOf="@id/editGenDialogCancelButton"
+            android:layout_marginStart="20dp"
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/black"
+
+            android:text="APPLY"
+            android:textColor="@color/white"
+            android:textSize="@dimen/editWorkout_buttonTextSize"
+            android:textStyle="bold"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.1"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+

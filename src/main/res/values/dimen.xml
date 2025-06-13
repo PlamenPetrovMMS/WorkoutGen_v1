@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="exerciseActivity_buttonWidth">130dp</dimen>
+    <dimen name="exerciseActivity_buttonHeight">70dp</dimen>
+    <dimen name="exerciseActivity_buttonCornerRadius">5dp</dimen>
+    <dimen name="exerciseActivity_buttonElementSpace">10dp</dimen>
+
+    <dimen name="editWorkout_buttonTextSize">20sp</dimen>
+    <dimen name="editWorkout_buttonWidth">120dp</dimen>
+
+</resources>

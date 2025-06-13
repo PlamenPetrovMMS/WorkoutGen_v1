@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/categoriesDialogLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Categories"
+        android:textSize="20sp"
+
+        android:layout_marginBottom="10dp"
+        />
+    <LinearLayout
+        android:id="@+id/categoriesDialogLayout"
+        android:layout_below="@+id/categoriesDialogLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <CheckBox
+            android:id="@+id/strengthCategoryCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/categoriesDialogLabel"
+
+            android:text="Strength"
+            />
+        <CheckBox
+            android:id="@+id/flexibilityCategoryCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/strengthCategoryCheckBox"
+
+            android:text="Flexibility"
+            />
+        <CheckBox
+            android:id="@+id/balanceCategoryCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/flexibilityCategoryCheckBox"
+
+            android:text="Balance"
+            />
+        <CheckBox
+            android:id="@+id/rehabCategoryCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/balanceCategoryCheckBox"
+
+            android:text="Rehab"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/skillLevelDialogLabel"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+
+        android:text="Skill Level"
+        android:textSize="20sp"
+
+        android:layout_marginBottom="10dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/skillLevelDialogLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/skillLevelDialogLabel">
+        <CheckBox
+            android:id="@+id/beginnerSkillLevelCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Beginner"
+            />
+        <CheckBox
+            android:id="@+id/intermediateSkillLevelCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Intermediate"
+            />
+        <CheckBox
+            android:id="@+id/advancedSkillLevelCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Advanced"
+            />
+        <CheckBox
+            android:id="@+id/proSkillLevelCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Pro"
+            />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

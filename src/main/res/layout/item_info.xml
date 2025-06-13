@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/itemInfoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ITEM INFO"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/itemInfoNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Name:"
+        android:layout_below="@+id/itemInfoTitle"
+        />
+    <TextView
+        android:id="@+id/itemInfoItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_toEndOf="@+id/itemInfoNameLabel"
+        android:layout_below="@+id/itemInfoTitle"
+        />
+
+    <TextView
+        android:id="@+id/itemInfoDescriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+
+        android:text="Description:"
+
+        android:layout_below="@id/itemInfoNameLabel"
+        />
+    <TextView
+        android:id="@+id/itemInfoItemDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemInfoDescriptionLabel"
+        />
+
+    <TextView
+        android:id="@+id/itemInfoCategoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+
+        android:text="Category:"
+
+        android:layout_below="@id/itemInfoItemDescription"
+        />
+    <LinearLayout
+        android:id="@+id/itemInfoCategoryLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/itemInfoCategoryLabel"
+        />
+
+
+    <TextView
+        android:id="@+id/itemInfoMuscleGroupLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="15dp"
+
+        android:text="Muscle Group:"
+
+        android:layout_below="@id/itemInfoCategoryLinearLayout"
+        />
+    <LinearLayout
+        android:id="@+id/itemInfoMuscleGroupLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/itemInfoMuscleGroupLabel"
+        />
+
+    <TextView
+        android:id="@+id/itemInfoSkillLevelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+
+        android:text="Skill Level"
+
+        android:layout_below="@+id/itemInfoMuscleGroupLinearLayout"
+        />
+    <TextView
+        android:id="@+id/itemInfoSkillLevelResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemInfoSkillLevelLabel"
+        />
+</RelativeLayout>

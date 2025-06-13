@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:background="@drawable/black_box"
+    android:id="@+id/itemLayout"
+    android:layout_marginTop="10dp">
+
+    <TextView
+        android:id="@+id/exerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+
+        android:text="PUSH-UP"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="italic|bold"
+        android:letterSpacing="0.04"
+
+        android:fontFamily="@font/main_font"/>
+
+    <TextView
+        android:id="@+id/setsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Sets: "
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:letterSpacing="0.04"
+
+        android:layout_below="@+id/exerciseName"
+        android:layout_marginTop="10dp"
+
+        android:fontFamily="@font/main_font"
+        />
+    <TextView
+        android:id="@+id/setsResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="1"
+
+        android:text="4 "
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:textSize="22sp"
+
+        android:layout_marginStart="10dp"
+
+        android:layout_toEndOf="@+id/setsLabel"
+        android:layout_below="@+id/exerciseName"
+
+        android:fontFamily="@font/main_font"
+        />
+
+
+    <TextView
+        android:id="@+id/repsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Reps: "
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:textSize="15sp"
+        android:fontFamily="@font/main_font"
+
+        android:layout_marginStart="60dp"
+
+        android:layout_toEndOf="@+id/setsLabel"
+        android:layout_alignBottom="@+id/setsLabel"
+
+        />
+    <TextView
+        android:id="@+id/repsResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="1"
+
+        android:text="4 "
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:textSize="22sp"
+        android:fontFamily="@font/main_font"
+
+        android:layout_marginStart="10dp"
+
+        android:layout_toEndOf="@+id/repsLabel"
+        android:layout_below="@+id/exerciseName"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/itemDoneButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+
+        app:cornerRadius="5dp"
+        app:backgroundTint="@color/white"
+
+        app:icon="@drawable/baseline_done_24"
+        app:iconTint="@color/black"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="30dp"
+        />
+
+</RelativeLayout>

@@ -2,9 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="main_red">#E53935</color>
-    <color name="main_black">#212121</color>
-    <color name="easy_level">#43A047</color>
-    <color name="medium_level">#FFEB3B</color>
-    <color name="hard_level">#FF3D3D</color>
+    <color name="yellow">#fff000</color>
+    <color name="red">#ff0505</color>
+    <color name="orange">#ff7b00</color>
 </resources>

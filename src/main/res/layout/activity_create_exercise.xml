@@ -1,207 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/createExerciseActivity"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateExerciseActivity"
-    android:padding="10dp"
-    android:gravity="center_vertical">
+    android:background="@color/white"
+    android:padding="10dp">
 
     <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="NAME:"
-        android:textSize="@dimen/text_size1"
-        />
-    <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_below="@+id/nameTextView"
-        android:imeOptions="actionDone"
-        android:singleLine="true"
-        android:inputType="text"/>
-
-    <RelativeLayout
-        android:id="@+id/group1"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/layout_height"
-        android:layout_below="@+id/nameEditText"
-        android:layout_marginTop="30dp">
-        <TextView
-            android:id="@+id/movementTypeTextView"
-            android:layout_width="@dimen/textview1_width"
-            android:layout_height="wrap_content"
-
-            android:text="MOVEMENT TYPE"
-            android:textSize="@dimen/text_size1"
-
-            android:layout_centerVertical="true"
-            />
-        <TextView
-            android:id="@+id/movementTypeResultTextView"
-            android:layout_width="@dimen/textview2_width"
-            android:layout_height="wrap_content"
-
-            android:text="@string/defaultResultValue"
-            android:textSize="@dimen/text_size2"
-
-            android:layout_toEndOf="@+id/movementTypeTextView"
-            android:layout_centerVertical="true"
-            />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/createMovementTypeButton"
-            android:layout_width="@dimen/button_width"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="EDIT"
-            android:padding="5dp"
-            app:cornerRadius="5dp"
-            android:layout_centerVertical="true"
-            android:backgroundTint="@color/main_red"
-            />
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/group2"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/layout_height"
-        android:layout_below="@+id/group1">
-        <TextView
-            android:id="@+id/bodypartTypeTextView"
-            android:layout_width="@dimen/textview1_width"
-            android:layout_height="wrap_content"
-
-            android:text="BODYPART TYPE"
-            android:textSize="@dimen/text_size1"
-
-            android:layout_centerVertical="true"
-            />
-        <TextView
-            android:id="@+id/bodypartTypeResultTextView"
-            android:layout_width="@dimen/textview2_width"
-            android:layout_height="wrap_content"
-
-            android:text="@string/defaultResultValue"
-            android:textSize="@dimen/text_size2"
-
-            android:layout_toEndOf="@+id/bodypartTypeTextView"
-
-            android:layout_centerVertical="true"
-            />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/createBodypartTypeButton"
-            android:layout_width="@dimen/button_width"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="EDIT"
-            android:padding="5dp"
-            app:cornerRadius="5dp"
-            android:layout_centerVertical="true"
-            android:backgroundTint="@color/main_red"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/group3"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/layout_height"
-        android:layout_below="@+id/group2">
-        <TextView
-            android:id="@+id/symmetryTextView"
-            android:layout_width="@dimen/textview1_width"
-            android:layout_height="wrap_content"
-
-            android:text="SYMMETRY"
-            android:textSize="@dimen/text_size1"
-
-            android:layout_centerVertical="true"
-            />
-        <TextView
-            android:id="@+id/symmetryResultTextView"
-            android:layout_width="@dimen/textview2_width"
-            android:layout_height="wrap_content"
-
-            android:text="@string/defaultResultValue"
-            android:textSize="@dimen/text_size2"
-
-            android:layout_toEndOf="@+id/symmetryTextView"
-
-            android:layout_centerVertical="true"
-            />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/createSymmetryButton"
-            android:layout_width="@dimen/button_width"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="EDIT"
-            android:padding="5dp"
-            app:cornerRadius="5dp"
-            android:layout_centerVertical="true"
-            android:backgroundTint="@color/main_red"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/group4"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/layout_height"
-        android:layout_below="@+id/group3"
-        android:gravity="center_vertical">
-        <TextView
-            android:id="@+id/levelTextView"
-            android:layout_width="@dimen/textview1_width"
-            android:layout_height="wrap_content"
-
-            android:text="LEVEL"
-            android:textSize="@dimen/text_size1"
-            android:layout_centerVertical="true"
-            />
-        <TextView
-            android:id="@+id/levelResultTextView"
-            android:layout_width="@dimen/textview2_width"
-            android:layout_height="wrap_content"
-
-            android:text="@string/defaultResultValue"
-            android:textSize="@dimen/text_size2"
-
-            android:layout_toEndOf="@+id/levelTextView"
-            android:layout_centerVertical="true"
-            />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/createLevelButton"
-            android:layout_width="@dimen/button_width"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="EDIT"
-            android:padding="5dp"
-            app:cornerRadius="5dp"
-            android:layout_centerVertical="true"
-            android:backgroundTint="@color/main_red"
-            />
-    </RelativeLayout>
-
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/createButton"
+        android:id="@+id/addExerciseNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/group4"
-        android:layout_centerHorizontal="true"
-        android:text="CREATE"
-        android:padding="10dp"
-        app:cornerRadius="5dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/main_red"
+        android:ems="2"
+
+        android:text="Name"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/main_font"
+        />
+    <EditText
+        android:id="@+id/addExerciseNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/addExerciseNameLabel"
+
+        android:hint="Enter exercise name ..."
+        android:textSize="18sp"
+        android:fontFamily="@font/main_font"
+        android:textColor="@color/black"
+
+        android:imeOptions="actionDone"
         />
 
 
+    <TextView
+        android:id="@+id/addExerciseDescriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Description"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/main_font"
+
+        android:layout_below="@id/addExerciseNameInput"
+        />
+    <EditText
+        android:id="@+id/addExerciseDescriptionInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="start"
+        android:lines="5"
+
+        android:layout_below="@id/addExerciseDescriptionLabel"
+
+        android:hint="Enter exercise description ..."
+        android:textSize="18sp"
+        android:fontFamily="@font/main_font"
+        android:textColor="@color/black"
+
+        android:imeOptions="actionDone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/addExerciseCategoryGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addExerciseDescriptionInput"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/addExerciseCategoryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+
+            android:text="Category"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/main_font"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addExerciseEditCategoryButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/red"
+
+            app:icon="@drawable/baseline_edit_24"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconTint="@color/white"
+            />
+        <LinearLayout
+            android:id="@+id/addExerciseCategoryLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addExerciseCategoryLabel"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ANY"
+                android:textColor="@color/white"
+                android:background="@drawable/orange_box"
+                android:textSize="17sp"
+                android:letterSpacing="0.1"
+                android:fontFamily="@font/main_font"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/addExerciseMuscleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addExerciseCategoryGroup"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/addExerciseMuscleGroupLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+
+            android:text="Muscle Group"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/main_font"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addExerciseEditMuscleGroupButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/red"
+
+            app:icon="@drawable/baseline_edit_24"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconTint="@color/white"
+            />
+
+        <LinearLayout
+            android:id="@+id/addExerciseMuscleGroupLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addExerciseMuscleGroupLabel"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ANY"
+                android:textColor="@color/white"
+                android:background="@drawable/orange_box"
+                android:textSize="17sp"
+                android:letterSpacing="0.1"
+                android:fontFamily="@font/main_font"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/addExerciseSkillLevelGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addExerciseMuscleGroup"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/addExerciseSkillLevelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+
+            android:text="Skill Level"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/main_font"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addExerciseEditSkillLevelButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/red"
+
+            app:icon="@drawable/baseline_edit_24"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconTint="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/addExerciseSkillLevelResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addExerciseSkillLevelLabel"
+
+            android:layout_marginTop="10dp"
+            android:text="ANY"
+            android:textColor="@color/white"
+            android:background="@drawable/orange_box"
+            android:textSize="17sp"
+            android:letterSpacing="0.1"
+            android:fontFamily="@font/main_font"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/addExerciseButtonGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addExerciseCancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="CANCEL"
+            android:textColor="@color/white"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.1"
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/black"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addExerciseAddButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="ADD"
+            android:textColor="@color/white"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.1"
+
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/black"
+
+            android:layout_toEndOf="@+id/addExerciseCancelButton"
+            android:layout_marginStart="50dp"
+            />
+
+    </RelativeLayout>
 </RelativeLayout>
+
