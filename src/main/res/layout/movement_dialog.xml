@@ -6,13 +6,13 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/skillLevelDialogTitle"
+        android:id="@+id/movementDialogTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:gravity="center_horizontal"
 
-        android:text="Skill Level"
+        android:text="Movement"
         android:textSize="25sp"
         android:textColor="@color/black"
         android:fontFamily="@font/main_font"
@@ -22,18 +22,18 @@
         />
 
     <LinearLayout
-        android:id="@+id/skillLevelDialogLinearLayout"
+        android:id="@+id/movementDialogLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/skillLevelDialogTitle">
+        android:layout_below="@+id/movementDialogTitle">
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
 
-            android:text="BEGINNER"
+            android:text="PUSH"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:fontFamily="@font/main_font"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
 
-            android:text="INTERMEDIATE"
+            android:text="PULL"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:fontFamily="@font/main_font"
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
 
-            android:text="ADVANCED"
+            android:text="HOLD"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:fontFamily="@font/main_font"
@@ -84,7 +84,41 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
 
-            android:text="PRO"
+            android:text="CURL"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.04"
+
+            android:background="@drawable/unselected_option"
+
+            android:gravity="center"
+            android:button="@null"
+            />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:text="LIFT"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.04"
+
+            android:background="@drawable/unselected_option"
+
+            android:gravity="center"
+            android:button="@null"
+            />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:text="DESCENT"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:fontFamily="@font/main_font"

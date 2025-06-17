@@ -8,10 +8,15 @@ public class Exercise {
     private String description;
     private List<Category> categoryList;
     private List<MuscleGroup> muscleGroupList;
-    private SkillLevel skillLevel;
+    private List<SkillLevel> skillLevelList;
+    private Metric metric;
+    private List<Movement> movementList;
 
     private int sets;
     private int reps;
+
+    private int minutes;
+    private int seconds;
 
 
     public Exercise(){}
@@ -21,14 +26,18 @@ public class Exercise {
             String description,
             List<Category> categoryList,
             List<MuscleGroup> muscleGroupList,
-            SkillLevel skillLevel
+            List<SkillLevel> skillLevel,
+            Metric metric,
+            List<Movement> movement
     ){
         this.id = id;
         this.name = name;
         this.description = description;
         this.categoryList = categoryList;
         this.muscleGroupList = muscleGroupList;
-        this.skillLevel = skillLevel;
+        this.skillLevelList = skillLevel;
+        this.metric = metric;
+        this.movementList = movement;
     }
 
 
@@ -74,14 +83,13 @@ public class Exercise {
         return stringBuilder.toString();
     }
 
-    public void setSkillLevel(SkillLevel skillLevel){
-        this.skillLevel = skillLevel;
-    }
-    public SkillLevel getSkillLevel(){
-        return skillLevel;
+    public void setSkillLevelList(List<SkillLevel> skillLevelList){
+        this.skillLevelList = skillLevelList;
     }
 
-
+    public List<SkillLevel> getSkillLevelList(){
+        return skillLevelList;
+    }
 
     public void setSets(int sets){
         this.sets = sets;
@@ -90,11 +98,43 @@ public class Exercise {
         this.reps = reps;
     }
 
+
+
     public int getSets(){
         return sets;
     }
     public int getReps(){
         return reps;
+    }
+
+    public void setMinutes(int minutes){
+        this.minutes = minutes;
+    }
+    public int getMinutes(){
+        return minutes;
+    }
+
+    public void setSeconds(int seconds){
+        this.seconds = seconds;
+    }
+    public int getSeconds(){
+        return seconds;
+    }
+
+
+    public void setMetric(Metric metric){
+        this.metric = metric;
+    }
+    public Metric getMetric(){
+        return metric;
+    }
+
+
+    public void setMovementList(List<Movement> movementList){
+        this.movementList = movementList;
+    }
+    public List<Movement> getMovementList(){
+        return movementList;
     }
 
 }

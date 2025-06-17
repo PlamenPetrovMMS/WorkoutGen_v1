@@ -8,13 +8,13 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/addExerciseDialogTitle"
+        android:id="@+id/editItemInfoDialogTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginBottom="10dp"
 
-        android:text="CREATE EXERCISE"
+        android:text="EDIT EXERCISE"
         android:textSize="27sp"
         android:textColor="@color/black"
         android:fontFamily="@font/main_font"
@@ -25,15 +25,15 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/addExerciseDialogTitle"
-        android:layout_above="@+id/addExerciseButtonGroup">
+        android:layout_below="@+id/editItemInfoDialogTitle"
+        android:layout_above="@+id/editItemInfoButtonGroup">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/addExerciseNameLabel"
+                android:id="@+id/editItemInfoNameLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="2"
@@ -44,11 +44,11 @@
                 android:fontFamily="@font/main_font"
                 />
             <EditText
-                android:id="@+id/addExerciseNameInput"
+                android:id="@+id/editItemInfoNameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:layout_below="@id/addExerciseNameLabel"
+                android:layout_below="@id/editItemInfoNameLabel"
 
                 android:hint="Enter exercise name ..."
                 android:textSize="18sp"
@@ -61,7 +61,7 @@
 
 
             <TextView
-                android:id="@+id/addExerciseDescriptionLabel"
+                android:id="@+id/editItemInfoDescriptionLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
@@ -70,17 +70,17 @@
                 android:textSize="20sp"
                 android:fontFamily="@font/main_font"
 
-                android:layout_below="@id/addExerciseNameInput"
+                android:layout_below="@id/editItemInfoNameInput"
                 />
             <EditText
-                android:id="@+id/addExerciseDescriptionInput"
+                android:id="@+id/editItemInfoDescriptionInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 android:gravity="start"
                 android:lines="5"
 
-                android:layout_below="@id/addExerciseDescriptionLabel"
+                android:layout_below="@id/editItemInfoDescriptionLabel"
 
                 android:hint="Enter exercise description ..."
                 android:textSize="18sp"
@@ -91,10 +91,10 @@
                 />
 
             <RelativeLayout
-                android:id="@+id/addExerciseCategoryGroup"
+                android:id="@+id/editItemInfoCategoryGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/addExerciseDescriptionInput"
+                android:layout_below="@+id/editItemInfoDescriptionInput"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="20dp">
 
@@ -112,7 +112,7 @@
                     android:textSize="20sp" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/addExerciseEditCategoryButton"
+                    android:id="@+id/editItemInfoEditCategoryButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
 
@@ -127,7 +127,7 @@
                     app:iconTint="@color/white" />
 
                 <LinearLayout
-                    android:id="@+id/addExerciseCategoryLinearLayout"
+                    android:id="@+id/editItemInfoCategoryLinearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/addExerciseCategoryLabel"
@@ -149,14 +149,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/addExerciseMuscleGroup"
+                android:id="@+id/editItemInfoMuscleGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/addExerciseCategoryGroup"
+                android:layout_below="@id/editItemInfoCategoryGroup"
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:id="@+id/addExerciseMuscleGroupLabel"
+                    android:id="@+id/editItemInfoMuscleGroupLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -168,7 +168,7 @@
                     />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/addExerciseEditMuscleGroupButton"
+                    android:id="@+id/editItemInfoEditMuscleGroupButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
 
@@ -184,10 +184,10 @@
                     />
 
                 <LinearLayout
-                    android:id="@+id/addExerciseMuscleGroupLinearLayout"
+                    android:id="@+id/editItemInfoMuscleGroupLinearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/addExerciseMuscleGroupLabel"
+                    android:layout_below="@id/editItemInfoMuscleGroupLabel"
                     android:orientation="vertical"
                     android:layout_marginTop="10dp">
 
@@ -207,14 +207,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/addExerciseSkillLevelGroup"
+                android:id="@+id/editItemInfoSkillLevelGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/addExerciseMuscleGroup"
+                android:layout_below="@+id/editItemInfoMuscleGroup"
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:id="@+id/addExerciseSkillLevelLabel"
+                    android:id="@+id/editItemInfoSkillLevelLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -225,7 +225,7 @@
                     />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/addExerciseEditSkillLevelButton"
+                    android:id="@+id/editItemInfoEditSkillLevelButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
 
@@ -241,25 +241,22 @@
                     />
 
                 <LinearLayout
-                    android:id="@+id/addExerciseSkillLevelLinearLayout"
+                    android:id="@+id/editItemInfoSkillLevelLinearLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/addExerciseSkillLevelLabel"
+                    android:layout_below="@+id/editItemInfoSkillLevelLabel"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/addExerciseSkillLevelResult"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
-
-                        android:layout_marginTop="10dp"
                         android:text="ANY"
                         android:textColor="@color/white"
                         android:background="@drawable/orange_box"
                         android:textSize="17sp"
                         android:letterSpacing="0.1"
                         android:fontFamily="@font/main_font"
+                        android:layout_marginTop="10dp"
                         />
 
                 </LinearLayout>
@@ -269,14 +266,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/addExerciseMetricGroup"
+                android:id="@+id/editItemInfoMetricGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/addExerciseSkillLevelGroup"
+                android:layout_below="@+id/editItemInfoSkillLevelGroup"
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:id="@+id/addExerciseMetricLabel"
+                    android:id="@+id/editItemInfoMetricLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -288,14 +285,14 @@
                     />
 
                 <LinearLayout
-                    android:id="@+id/addExerciseMetricLinearLayout"
+                    android:id="@+id/editItemInfoMetricLinearLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_below="@id/addExerciseMetricLabel">
+                    android:layout_below="@id/editItemInfoMetricLabel">
 
                     <com.google.android.material.checkbox.MaterialCheckBox
-                        android:id="@+id/addExerciseMetricSetsRepsCheckbox"
+                        android:id="@+id/editItemInfoMetricSetsRepsCheckbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -309,7 +306,7 @@
                         />
 
                     <com.google.android.material.checkbox.MaterialCheckBox
-                        android:id="@+id/addExerciseMetricTimeCheckbox"
+                        android:id="@+id/editItemInfoMetricTimeCheckbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -327,14 +324,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/addExerciseMovementGroup"
+                android:id="@+id/editItemInfoMovementGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/addExerciseMetricGroup"
+                android:layout_below="@+id/editItemInfoMetricGroup"
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:id="@+id/addExerciseMovementLabel"
+                    android:id="@+id/editItemInfoMovementLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -347,7 +344,7 @@
                     />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/addExerciseEditMovementButton"
+                    android:id="@+id/editItemInfoEditMovementButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
 
@@ -362,11 +359,11 @@
                     app:iconTint="@color/white" />
 
                 <LinearLayout
-                    android:id="@+id/addExerciseMovementLinearLayout"
+                    android:id="@+id/editItemInfoMovementLinearLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_below="@+id/addExerciseMovementLabel">
+                    android:layout_below="@+id/editItemInfoMovementLabel">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -384,52 +381,66 @@
 
             </RelativeLayout>
 
+            <LinearLayout
+                android:id="@+id/editItemInfoButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/editItemInfoMovementGroup"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/editItemInfoApplyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="APPLY"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/main_font"
+                    android:letterSpacing="0.1"
+
+                    app:cornerRadius="5dp"
+                    app:backgroundTint="@color/black"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/editItemInfoCancelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="CANCEL"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/main_font"
+                    android:letterSpacing="0.1"
+                    android:textSize="20sp"
+
+                    app:cornerRadius="5dp"
+                    app:backgroundTint="@color/black"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/editItemInfoRemoveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="REMOVE"
+                    android:textColor="@color/red"
+                    android:fontFamily="@font/main_font"
+                    android:letterSpacing="0.1"
+                    android:textSize="20sp"
+
+                    app:cornerRadius="5dp"
+                    app:backgroundTint="@color/black"
+                    />
+
+            </LinearLayout>
+
         </RelativeLayout>
 
     </ScrollView>
-
-    <RelativeLayout
-        android:id="@+id/addExerciseButtonGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/addExerciseCancelButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="CANCEL"
-            android:textColor="@color/white"
-            android:fontFamily="@font/main_font"
-            android:letterSpacing="0.1"
-            android:textSize="20sp"
-
-            app:cornerRadius="5dp"
-            app:backgroundTint="@color/black"
-            />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/addExerciseAddButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="ADD"
-            android:textColor="@color/white"
-            android:fontFamily="@font/main_font"
-            android:letterSpacing="0.1"
-            android:textSize="20sp"
-
-            app:cornerRadius="5dp"
-            app:backgroundTint="@color/black"
-
-            android:layout_toEndOf="@+id/addExerciseCancelButton"
-            android:layout_marginStart="50dp"
-            />
-
-    </RelativeLayout>
 
 </RelativeLayout>
 

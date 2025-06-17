@@ -8,96 +8,153 @@
         android:id="@+id/itemInfoTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ITEM INFO"
         android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+
+        android:text="ITEM INFO"
+        android:textSize="27sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/main_font"
+        android:textStyle="bold|italic"
+        android:letterSpacing="0.04"
         />
 
-    <TextView
-        android:id="@+id/itemInfoNameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="Name:"
-        android:layout_below="@+id/itemInfoTitle"
-        />
-    <TextView
-        android:id="@+id/itemInfoItemName"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/itemInfoTitle">
 
-        android:layout_toEndOf="@+id/itemInfoNameLabel"
-        android:layout_below="@+id/itemInfoTitle"
-        />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/itemInfoDescriptionLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+            <TextView
+                android:id="@+id/itemInfoNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:text="Description:"
+                android:text="Name:"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
+                />
+            <TextView
+                android:id="@+id/itemInfoItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
 
-        android:layout_below="@id/itemInfoNameLabel"
-        />
-    <TextView
-        android:id="@+id/itemInfoItemDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/itemInfoDescriptionLabel"
-        />
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font"
+                android:letterSpacing="0.04"
 
-    <TextView
-        android:id="@+id/itemInfoCategoryLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/itemInfoNameLabel"
+                />
 
-        android:text="Category:"
+            <TextView
+                android:id="@+id/itemInfoDescriptionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
 
-        android:layout_below="@id/itemInfoItemDescription"
-        />
-    <LinearLayout
-        android:id="@+id/itemInfoCategoryLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/itemInfoCategoryLabel"
-        />
+                android:text="Description:"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
+
+                android:layout_below="@id/itemInfoNameLabel"
+                />
+            <TextView
+                android:id="@+id/itemInfoItemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemInfoDescriptionLabel"
+
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font"
+                android:letterSpacing="0.04"
+                />
+
+            <TextView
+                android:id="@+id/itemInfoCategoryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+
+                android:text="Category:"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
+
+                android:layout_below="@id/itemInfoItemDescription"
+                />
+            <LinearLayout
+                android:id="@+id/itemInfoCategoryLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/itemInfoCategoryLabel"
+                />
 
 
-    <TextView
-        android:id="@+id/itemInfoMuscleGroupLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/itemInfoMuscleGroupLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:layout_marginTop="15dp"
+                android:layout_marginTop="15dp"
 
-        android:text="Muscle Group:"
+                android:text="Muscle Group:"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
 
-        android:layout_below="@id/itemInfoCategoryLinearLayout"
-        />
-    <LinearLayout
-        android:id="@+id/itemInfoMuscleGroupLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/itemInfoMuscleGroupLabel"
-        />
+                android:layout_below="@id/itemInfoCategoryLinearLayout"
+                />
+            <LinearLayout
+                android:id="@+id/itemInfoMuscleGroupLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/itemInfoMuscleGroupLabel"
+                />
 
-    <TextView
-        android:id="@+id/itemInfoSkillLevelLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+            <TextView
+                android:id="@+id/itemInfoSkillLevelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
 
-        android:text="Skill Level"
+                android:text="Skill Level"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
 
-        android:layout_below="@+id/itemInfoMuscleGroupLinearLayout"
-        />
-    <TextView
-        android:id="@+id/itemInfoSkillLevelResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/itemInfoSkillLevelLabel"
-        />
+                android:layout_below="@+id/itemInfoMuscleGroupLinearLayout"
+                />
+            <LinearLayout
+                android:id="@+id/itemInfoSkillLevelLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/itemInfoSkillLevelLabel">
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
 </RelativeLayout>

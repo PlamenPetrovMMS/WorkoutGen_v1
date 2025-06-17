@@ -2,53 +2,100 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="30dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
 
     <TextView
-        android:id="@+id/muscleGroupDialogLabel"
-        android:layout_width="wrap_content"
+        android:id="@+id/muscleGroupDialogTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
 
         android:text="Muscle Group"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/main_font"
+        android:letterSpacing="0.04"
+        android:textStyle="bold|italic"
 
-        android:layout_marginBottom="10dp"
         />
+
     <LinearLayout
-        android:id="@+id/muscleGroupDialogLayout"
-        android:layout_width="wrap_content"
+        android:id="@+id/muscleGroupDialogLinearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/muscleGroupDialogLabel">
-        <CheckBox
-            android:id="@+id/upperbodyMuscleGroupCheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        android:layout_below="@+id/muscleGroupDialogTitle">
 
-            android:text="Upperbody"
-            />
-        <CheckBox
-            android:id="@+id/coreMuscleGroupCheckBox"
-            android:layout_width="wrap_content"
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
 
-            android:text="Core"
+            android:text="UPPERBODY"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.04"
+
+            android:background="@drawable/unselected_option"
+
+            android:gravity="center"
+            android:button="@null"
             />
-        <CheckBox
-            android:id="@+id/lowerbodyMuscleGroupCheckBox"
-            android:layout_width="wrap_content"
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
 
-            android:text="Lowerbody"
+            android:text="CORE"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.04"
+
+            android:background="@drawable/unselected_option"
+
+            android:gravity="center"
+            android:button="@null"
             />
-        <CheckBox
-            android:id="@+id/fullbodyMuscleGroupCheckBox"
-            android:layout_width="wrap_content"
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
 
-            android:text="Fullbody"
+            android:text="LOWERBODY"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.04"
+
+            android:background="@drawable/unselected_option"
+
+            android:gravity="center"
+            android:button="@null"
             />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:text="FULLBODY"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/main_font"
+            android:letterSpacing="0.04"
+
+            android:background="@drawable/unselected_option"
+
+            android:gravity="center"
+            android:button="@null"
+            />
+
     </LinearLayout>
-
 
 </RelativeLayout>

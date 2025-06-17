@@ -6,7 +6,9 @@ import java.util.List;
 public class WorkoutFilter {
     private List<Category> categoryList = new ArrayList<>();
     private List<MuscleGroup> muscleGroupList  = new ArrayList<>();
-    private SkillLevel skillLevel;
+    private List<SkillLevel> skillLevelList = new ArrayList<>();
+    private List<Movement> movementList = new ArrayList<>();
+    private Boolean setsRepsMetricState = false, timeMetricState = false;
 
     public WorkoutFilter(){}
 
@@ -24,10 +26,31 @@ public class WorkoutFilter {
         return muscleGroupList;
     }
 
-    public void setSkillLevel(SkillLevel skillLevel){
-        this.skillLevel = skillLevel;
+    public void setSkillLevelList(List<SkillLevel> skillLevelList){
+        this.skillLevelList = skillLevelList;
     }
-    public SkillLevel getSkillLevel(){
-        return skillLevel;
+    public List<SkillLevel> getSkillLevelList(){
+        return skillLevelList;
+    }
+
+    public void setMovementList(List<Movement> movementList){
+        this.movementList = movementList;
+    }
+    public List<Movement> getMovementList(){
+        return movementList;
+    }
+
+    public void setSetsRepsMetricState(boolean setsRepsMetricState){
+        this.setsRepsMetricState = setsRepsMetricState;
+    }
+    public boolean getSetsRepsMetricState(){
+        return setsRepsMetricState;
+    }
+
+    public void setTimeMetricState(boolean timeMetricState){
+        this.timeMetricState = timeMetricState;
+    }
+    public boolean getTimeMetricState(){
+        return timeMetricState;
     }
 }

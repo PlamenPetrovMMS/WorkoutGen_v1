@@ -7,11 +7,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
+    private final Context context;
     private static final String DATABASE_NAME = "WorkoutGen.db";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_NAME = "exercise_table";
@@ -23,6 +25,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String COLUMN_CATEGORIES = "categories";
     private static final String COLUMN_MUSCLE_GROUPS = "muscle_groups";
     private static final String COLUMN_SKILL_LEVEL = "skill_level";
+    private static final String COLUMN_METRIC = "metric";
+    private static final String COLUMN_MOVEMENT = "movement";
 
 
 
@@ -31,6 +35,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private DBHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
     public static synchronized DBHelper getInstance(Context context) {
         try{
@@ -60,7 +65,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 COLUMN_DESCRIPTION + " TEXT," +
                 COLUMN_CATEGORIES + " TEXT," +
                 COLUMN_MUSCLE_GROUPS + " TEXT," +
-                COLUMN_SKILL_LEVEL + " TEXT" +
+                COLUMN_SKILL_LEVEL + " TEXT," +
+                COLUMN_METRIC + " TEXT," +
+                COLUMN_MOVEMENT + " TEXT" +
                 ")";
 
         db.execSQL(CREATE_TABLE);
@@ -80,9 +87,18 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(COLUMN_DESCRIPTION, exercise.getDescription());
         values.put(COLUMN_CATEGORIES, exercise.getItemListAsString(exercise.getCategoryList(), Category.class));
         values.put(COLUMN_MUSCLE_GROUPS, exercise.getItemListAsString(exercise.getMuscleGroupList(), MuscleGroup.class));
-        values.put(COLUMN_SKILL_LEVEL, exercise.getSkillLevel().name());
+        values.put(COLUMN_SKILL_LEVEL, exercise.getItemListAsString(exercise.getSkillLevelList(), SkillLevel.class));
+        values.put(COLUMN_METRIC, exercise.getMetric().name());
+        values.put(COLUMN_MOVEMENT, exercise.getItemListAsString(exercise.getMovementList(), Movement.class));
 
-        database.insert(TABLE_NAME, null, values);
+        long rowId = database.insert(TABLE_NAME, null, values);
+
+        if (rowId != -1) {
+            System.out.println("Insert was successful");
+        } else {
+            System.out.println("Insert failed");
+        }
+
         database.close();
     }
     @SuppressLint("Range")
@@ -99,7 +115,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 String exerciseDescription = cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPTION));
                 List<Category> exerciseCategories = getEnumItemsListFromCursor(cursor, COLUMN_CATEGORIES, Category.class);
                 List<MuscleGroup> exerciseMuscleGroups = getEnumItemsListFromCursor(cursor, COLUMN_MUSCLE_GROUPS, MuscleGroup.class);
-                SkillLevel exerciseSkillLevel = SkillLevel.fromString(cursor.getString(cursor.getColumnIndex(COLUMN_SKILL_LEVEL)));
+                List<SkillLevel> exerciseSkillLevel = getEnumItemsListFromCursor(cursor, COLUMN_SKILL_LEVEL, SkillLevel.class);
+                Metric exerciseMetric = Metric.fromString(cursor.getString(cursor.getColumnIndex(COLUMN_METRIC)));
+                List<Movement> exerciseMovements = getEnumItemsListFromCursor(cursor, COLUMN_MOVEMENT, Movement.class);
 
                 Exercise exercise = new Exercise(
                         exerciseId,
@@ -107,7 +125,9 @@ public class DBHelper extends SQLiteOpenHelper {
                         exerciseDescription,
                         exerciseCategories,
                         exerciseMuscleGroups,
-                        exerciseSkillLevel
+                        exerciseSkillLevel,
+                        exerciseMetric,
+                        exerciseMovements
                 );
 
                 exerciseList.add(exercise);
@@ -133,7 +153,9 @@ public class DBHelper extends SQLiteOpenHelper {
             String exerciseDescription = cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPTION));
             List<Category> exerciseCategories = getEnumItemsListFromCursor(cursor, COLUMN_CATEGORIES, Category.class);
             List<MuscleGroup> exerciseMuscleGroups = getEnumItemsListFromCursor(cursor, COLUMN_MUSCLE_GROUPS, MuscleGroup.class);
-            SkillLevel exerciseSkillLevel = SkillLevel.fromString(cursor.getString(cursor.getColumnIndex(COLUMN_SKILL_LEVEL)));
+            List<SkillLevel> exerciseSkillLevel = getEnumItemsListFromCursor(cursor, COLUMN_SKILL_LEVEL, SkillLevel.class);
+            Metric exerciseMetric = Metric.fromString(cursor.getString(cursor.getColumnIndex(COLUMN_METRIC)));
+            List<Movement> exerciseMovements = getEnumItemsListFromCursor(cursor, COLUMN_MOVEMENT, Movement.class);
 
             database.close();
             return new Exercise(
@@ -142,7 +164,9 @@ public class DBHelper extends SQLiteOpenHelper {
                     exerciseDescription,
                     exerciseCategories,
                     exerciseMuscleGroups,
-                    exerciseSkillLevel
+                    exerciseSkillLevel,
+                    exerciseMetric,
+                    exerciseMovements
             );
         }else{
             Log.e("DBHelper", "getExerciseWithId() -> Cursor is empty or NULL");
@@ -178,9 +202,41 @@ public class DBHelper extends SQLiteOpenHelper {
         return enumItemsList;
     }
 
+    public void updateItemById(int id, Exercise exercise){
+        SQLiteDatabase database = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, exercise.getName());
+        values.put(COLUMN_DESCRIPTION, exercise.getDescription());
+        values.put(COLUMN_CATEGORIES, exercise.getItemListAsString(exercise.getCategoryList(), Category.class));
+        values.put(COLUMN_MUSCLE_GROUPS, exercise.getItemListAsString(exercise.getMuscleGroupList(), MuscleGroup.class));
+        values.put(COLUMN_SKILL_LEVEL, exercise.getItemListAsString(exercise.getSkillLevelList(), SkillLevel.class));
+        values.put(COLUMN_METRIC, exercise.getMetric().name());
+        values.put(COLUMN_MOVEMENT, exercise.getItemListAsString(exercise.getMovementList(), Movement.class));
+
+        database.update(TABLE_NAME, values, "id = ?", new String[]{String.valueOf(id)});
+        database.close();
+    }
+
+    public void removeItemById(int id){
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.delete(TABLE_NAME, "id = ?", new String[]{String.valueOf(id)});
+        database.close();
+    }
+
     public void resetDatabase(){
         SQLiteDatabase database = this.getWritableDatabase();
         database.delete(TABLE_NAME, null, null);
+        database.close();
+    }
+
+    public void addColumn(){
+
+        // LAST COLUMN ADDED : MOVEMENT
+
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN " + COLUMN_MOVEMENT + " TEXT");
+        Toast.makeText(context, "Column " + COLUMN_MOVEMENT + " was added", Toast.LENGTH_SHORT).show();
         database.close();
     }
 }

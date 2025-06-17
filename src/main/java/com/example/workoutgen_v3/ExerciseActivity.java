@@ -3,12 +3,7 @@ package com.example.workoutgen_v3;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -20,7 +15,6 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -28,28 +22,31 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.checkbox.MaterialCheckBox;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ExerciseActivity extends AppCompatActivity {
     Context context = this;
     RecyclerView recyclerView;
     AddedExerciseAdapter adapter;
-    MaterialButton createButton, resetButton;
+    MaterialButton createButton;
     List<Exercise> addedExercises;
 
 
     SearchView searchView;
-    LinearLayout categoryLinearLayout, muscleGroupLinearLayout;
-    TextView skillLevelResult;
-    MaterialButton editCategoriesButton, editMuscleGroupsButton, editSkillLevelButton;
+    LinearLayout categoryLinearLayout, muscleGroupLinearLayout, metricLinearLayout, skillLevelLinearLayout, movementLinearLayout;
+    MaterialButton editCategoriesButton, editMuscleGroupsButton, editSkillLevelButton, editMovementButton;
+    MaterialCheckBox setsRepsCheckbox, timeCheckbox;
     MaterialButton cancelButton, addButton;
 
 
     List<Category> categoryList = new ArrayList<>();
     List<MuscleGroup> muscleGroupList = new ArrayList<>();
-    SkillLevel skillLevel = null;
+    List<SkillLevel> skillLevelList = new ArrayList<>();
+    List<Movement> movementList = new ArrayList<>();
 
 
     @Override
@@ -89,6 +86,8 @@ public class ExerciseActivity extends AppCompatActivity {
 
 
 
+
+
         createButton = findViewById(R.id.exerciseActivityCreateButton);
         createButton.setOnClickListener(view -> {
             view.animate().scaleX(0.90f).scaleY(0.90f).setDuration(30).withEndAction(() -> {
@@ -103,69 +102,42 @@ public class ExerciseActivity extends AppCompatActivity {
             }).start();
         });
 
-        resetButton = findViewById(R.id.exerciseActivityResetButton);
-        resetButton.setOnClickListener(view -> {
-            view.animate().scaleX(0.90f).scaleY(0.90f).setDuration(30).withEndAction(() -> {
-                view.animate().scaleX(1f).scaleY(1f).setDuration(10).withEndAction(() -> {
-
-                    Dialog confirmDialog = new Dialog(context);
-                    confirmDialog.setContentView(R.layout.confirm_reset);
-                    confirmDialog.getWindow().setBackgroundDrawableResource(R.drawable.white_box);
-
-                    MaterialButton yesButton = confirmDialog.findViewById(R.id.confirmResetYesButton);
-                    yesButton.setOnClickListener(confirmView -> {
-                        confirmView.animate().scaleX(0.90f).scaleY(0.90f).setDuration(30).withEndAction(() -> {
-                            confirmView.animate().scaleX(1f).scaleY(1f).setDuration(10).withEndAction(() -> {
-
-                                addedExercises = new ArrayList<>();
-                                DBHelper.getInstance(this).resetDatabase();
-                                adapter.updateDataset(addedExercises);
-                                confirmDialog.dismiss();
-
-                            }).start();
-                        }).start();
-                    });
-
-                    MaterialButton noButton = confirmDialog.findViewById(R.id.confirmResetNoButton);
-                    noButton.setOnClickListener(confirmView -> {
-                        confirmView.animate().scaleX(0.90f).scaleY(0.90f).setDuration(30).withEndAction(() -> {
-                            confirmView.animate().scaleX(1f).scaleY(1f).setDuration(10).withEndAction(() -> {
-
-                                confirmDialog.dismiss();
-
-                            }).start();
-                        }).start();
-                    });
-
-                    confirmDialog.show();
-
-                }).start();
-            }).start();
-        });
-
-
-
     } // onCreate ends here ========================================================================
 
     private void initializeDialog(Dialog dialog){
-        EditText nameInput, descriptionInput;
-        nameInput = dialog.findViewById(R.id.addExerciseNameInput);
-        descriptionInput = dialog.findViewById(R.id.addExerciseDescriptionInput);
-        descriptionInput.setOnEditorActionListener((textView, actionId, event) -> {
-            if(actionId == EditorInfo.IME_ACTION_DONE){
-                textView.clearFocus();
-                InputMethodManager imm = (InputMethodManager) textView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                if(imm != null){
-                    imm.hideSoftInputFromWindow(textView.getWindowToken(), 0);
-                }
-                return true;
-            }
-            return false;
-        });
+
+        EditText nameInput = dialog.findViewById(R.id.addExerciseNameInput);
+        EditText descriptionInput = dialog.findViewById(R.id.addExerciseDescriptionInput);
 
         categoryLinearLayout = dialog.findViewById(R.id.addExerciseCategoryLinearLayout);
         muscleGroupLinearLayout = dialog.findViewById(R.id.addExerciseMuscleGroupLinearLayout);
-        skillLevelResult = dialog.findViewById(R.id.addExerciseSkillLevelResult);
+        skillLevelLinearLayout = dialog.findViewById(R.id.addExerciseSkillLevelLinearLayout);
+        movementLinearLayout = dialog.findViewById(R.id.addExerciseMovementLinearLayout);
+
+        metricLinearLayout = dialog.findViewById(R.id.addExerciseMetricLinearLayout);
+        setsRepsCheckbox = dialog.findViewById(R.id.addExerciseMetricSetsRepsCheckbox);
+        timeCheckbox = dialog.findViewById(R.id.addExerciseMetricTimeCheckbox);
+        Util.setLinearLayoutMaterialCheckboxListener(metricLinearLayout);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        categoryList.clear();
+        muscleGroupList.clear();
+        movementList.clear();
+        skillLevelList.clear();
+
+
+
 
         editCategoriesButton = dialog.findViewById(R.id.addExerciseEditCategoryButton);
         editCategoriesButton.setOnClickListener(view -> {
@@ -175,10 +147,12 @@ public class ExerciseActivity extends AppCompatActivity {
 
                     Dialog categoriesDialog = new Dialog(this);
                     categoriesDialog.setContentView(R.layout.categories_dialog);
+                    Objects.requireNonNull(categoriesDialog.getWindow()).setBackgroundDrawableResource(R.drawable.white_box);
 
-                    LinearLayout linearLayout = categoriesDialog.findViewById(R.id.categoriesDialogLayout);
+                    LinearLayout linearLayout = categoriesDialog.findViewById(R.id.categoryDialogLinearLayout);
+                    Util.loadSelectionDialogCheckboxes(context, linearLayout, categoryList, Category.class);
 
-                    loadSelectionDialogCheckboxes(linearLayout, categoryList, Category.class);
+                    Util.setCheckBoxChildClickAnimation(context, linearLayout);
 
                     categoriesDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                         @Override
@@ -191,14 +165,9 @@ public class ExerciseActivity extends AppCompatActivity {
                                     categoryList.add(Category.fromString(checkBoxName));
                                 }
                             }
-                            if(!categoryList.isEmpty()) updateGenLinearDialog(categoryLinearLayout, categoryList, Category.class);
-                            else{
-                                TextView textView = new TextView(context);
-                                textView.setText("ANY");
-                                setLinearLayoutTextViewUI(textView);
-                                categoryLinearLayout.removeAllViews();
-                                categoryLinearLayout.addView(textView);
-                            }
+
+                            Util.updateDisplayedOptions(context, categoryLinearLayout, categoryList, Category.class);
+
                         }
                     });
 
@@ -224,31 +193,26 @@ public class ExerciseActivity extends AppCompatActivity {
 
                     Dialog muscleGroupDialog = new Dialog(this);
                     muscleGroupDialog.setContentView(R.layout.muscle_group_dialog);
+                    Objects.requireNonNull(muscleGroupDialog.getWindow()).setBackgroundDrawableResource(R.drawable.white_box);
 
-                    LinearLayout linearLayout = muscleGroupDialog.findViewById(R.id.muscleGroupDialogLayout);
+                    LinearLayout linearLayout = muscleGroupDialog.findViewById(R.id.muscleGroupDialogLinearLayout);
+                    Util.loadSelectionDialogCheckboxes(context, linearLayout, muscleGroupList, MuscleGroup.class);
 
-                    loadSelectionDialogCheckboxes(linearLayout, muscleGroupList, MuscleGroup.class);
+                    Util.setCheckBoxChildClickAnimation(context, linearLayout);
 
                     muscleGroupDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialogInterface) {
                             muscleGroupList.clear();
                             for(int i = 0; i < linearLayout.getChildCount(); i++){
-                                CheckBox checkBox = (CheckBox) linearLayout.getChildAt(i);
+                                MaterialCheckBox checkBox = (MaterialCheckBox) linearLayout.getChildAt(i);
                                 if(checkBox.isChecked()){
                                     String checkBoxName = checkBox.getText().toString().trim().toUpperCase();
                                     muscleGroupList.add(MuscleGroup.fromString(checkBoxName));
                                 }
                             }
 
-                            if(!muscleGroupList.isEmpty()) updateGenLinearDialog(muscleGroupLinearLayout, muscleGroupList, MuscleGroup.class);
-                            else{
-                                TextView textView = new TextView(context);
-                                textView.setText("ANY");
-                                setLinearLayoutTextViewUI(textView);
-                                muscleGroupLinearLayout.removeAllViews();
-                                muscleGroupLinearLayout.addView(textView);
-                            }
+                            Util.updateDisplayedOptions(context, muscleGroupLinearLayout, muscleGroupList, MuscleGroup.class);
                         }
                     });
 
@@ -274,52 +238,26 @@ public class ExerciseActivity extends AppCompatActivity {
 
                     Dialog skillLevelDialog = new Dialog(this);
                     skillLevelDialog.setContentView(R.layout.skill_level_dialog);
+                    Objects.requireNonNull(skillLevelDialog.getWindow()).setBackgroundDrawableResource(R.drawable.white_box);
 
-                    LinearLayout linearLayout = skillLevelDialog.findViewById(R.id.skillLevelDialogLayout);
+                    LinearLayout linearLayout = skillLevelDialog.findViewById(R.id.skillLevelDialogLinearLayout);
+                    Util.loadSelectionDialogCheckboxes(context, linearLayout, skillLevelList, SkillLevel.class);
 
-                    if(skillLevel != null){
-                        for(int i = 0; i < linearLayout.getChildCount(); i++){
-                            CheckBox checkBox = (CheckBox) linearLayout.getChildAt(i);
-                            String checkBoxName = checkBox.getText().toString().trim().toUpperCase();
-                            if(skillLevel.name().equals(checkBoxName)){
-                                checkBox.setChecked(true);
-                            }
-                        }
-                    }
-
-                    for(int i = 0; i < linearLayout.getChildCount(); i++){
-                        CheckBox checkBox = (CheckBox) linearLayout.getChildAt(i);
-                        int currentCheckBoxIndex = i;
-                        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                            @Override
-                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                if(isChecked){
-                                    for(int j = 0; j < linearLayout.getChildCount(); j++){
-                                        CheckBox uncheckedBox = (CheckBox) linearLayout.getChildAt(j);
-                                        if(j != currentCheckBoxIndex){
-                                            uncheckedBox.setChecked(false);
-                                        }
-                                    }
-                                }
-                            }
-                        });
-                    }
+                    Util.setCheckBoxChildClickAnimation(context, linearLayout);
 
                     skillLevelDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialogInterface) {
-                            skillLevel = null;
+                            skillLevelList.clear();
                             for(int i = 0; i < linearLayout.getChildCount(); i++){
-                                CheckBox checkBox = (CheckBox) linearLayout.getChildAt(i);
+                                MaterialCheckBox checkBox = (MaterialCheckBox) linearLayout.getChildAt(i);
                                 if(checkBox.isChecked()){
                                     String checkBoxName = checkBox.getText().toString().trim().toUpperCase();
-                                    skillLevel = SkillLevel.fromString(checkBoxName);
+                                    skillLevelList.add(SkillLevel.fromString(checkBoxName));
                                 }
                             }
 
-                            if(skillLevel != null) skillLevelResult.setText(skillLevel.name());
-                            else skillLevelResult.setText("ANY");
-
+                            Util.updateDisplayedOptions(context, skillLevelLinearLayout, skillLevelList, SkillLevel.class);
 
                         }
                     });
@@ -331,6 +269,45 @@ public class ExerciseActivity extends AppCompatActivity {
 
         });
 
+
+
+
+
+        editMovementButton = dialog.findViewById(R.id.addExerciseEditMovementButton);
+        editMovementButton.setOnClickListener(view -> {
+            view.animate().scaleX(0.90f).scaleY(0.90f).setDuration(30).withEndAction(() -> {
+                view.animate().scaleX(1f).scaleY(1f).setDuration(10).withEndAction(() -> {
+
+                    Dialog movementDialog = new Dialog(context);
+                    movementDialog.setContentView(R.layout.movement_dialog);
+                    Objects.requireNonNull(movementDialog.getWindow()).setBackgroundDrawableResource(R.drawable.white_box);
+
+                    LinearLayout linearLayout = movementDialog.findViewById(R.id.movementDialogLinearLayout);
+                    Util.loadSelectionDialogCheckboxes(context, linearLayout, movementList, Movement.class);
+
+                    Util.setCheckBoxChildClickAnimation(context, linearLayout);
+
+                    movementDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                            movementList.clear();
+                            for(int i = 0; i < linearLayout.getChildCount(); i++){
+                                MaterialCheckBox checkBox = (MaterialCheckBox) linearLayout.getChildAt(i);
+                                if(checkBox.isChecked()){
+                                    movementList.add(Movement.fromString(checkBox.getText().toString()));
+                                }
+                            }
+
+                            Util.updateDisplayedOptions(context, movementLinearLayout, movementList, Movement.class);
+
+                        }
+                    });
+
+                    movementDialog.show();
+
+                }).start();
+            }).start();
+        });
 
 
 
@@ -378,11 +355,23 @@ public class ExerciseActivity extends AppCompatActivity {
                     if(muscleGroupList == null) muscleGroupList = new ArrayList<>();
                     exercise.setMuscleGroupList(muscleGroupList);
 
-                    if(skillLevel == null){
+                    if(skillLevelList.isEmpty()){
                         Toast.makeText(this, "Please, select a valid skill level", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    exercise.setSkillLevel(skillLevel);
+                    exercise.setSkillLevelList(skillLevelList);
+                    
+                    if(setsRepsCheckbox.isChecked()){
+                        exercise.setMetric(Metric.REPS);
+                    }else if (timeCheckbox.isChecked()){
+                        exercise.setMetric(Metric.TIME);
+                    }else{
+                        Toast.makeText(context, "Please, select a valid metric", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    if(movementList == null) movementList = new ArrayList<>();
+                    exercise.setMovementList(movementList);
 
                     DBHelper.getInstance(this).saveExercise(exercise);
                     Toast.makeText(this, "Exercise was saved", Toast.LENGTH_SHORT).show();
@@ -390,54 +379,15 @@ public class ExerciseActivity extends AppCompatActivity {
                     dialog.dismiss();
                     adapter.updateDataset(DBHelper.getInstance(context).getAllExercises());
 
+                    categoryList = new ArrayList<>();
+                    muscleGroupList = new ArrayList<>();
+                    skillLevelList = new ArrayList<>();
+
                 }).start();
             }).start();
 
         });
     }
-
-    private <T extends Enum<T>> void loadSelectionDialogCheckboxes(LinearLayout linearLayout, List<T> enumItemList, Class<T> enumClass){
-        if(!enumItemList.isEmpty()){
-            for(T category: enumItemList){
-                for(int i = 0; i < linearLayout.getChildCount(); i++){
-                    CheckBox checkBox = (CheckBox) linearLayout.getChildAt(i);
-                    if(category.name().equals(checkBox.getText().toString().trim().toUpperCase())){
-                        checkBox.setChecked(true);
-                    }
-                }
-            }
-        }
-    }
-
-    private <T extends Enum<T>> void updateGenLinearDialog(LinearLayout linearLayout, List<T> enumItemList, Class<T> enumClass){
-        linearLayout.removeAllViews();
-
-        for(T enumItem: enumItemList){
-            TextView textView = new TextView(this);
-            textView.setText(enumItem.name());
-            setLinearLayoutTextViewUI(textView);
-            linearLayout.addView(textView);
-        }
-
-    }
-
-
-
-
-    private void setLinearLayoutTextViewUI(TextView textView){
-        textView.setTextColor(ContextCompat.getColor(this, R.color.white));
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-        params.setMargins(0, 0, 10, 0);
-        textView.setLayoutParams(params);
-        textView.setBackgroundResource(R.drawable.orange_box);
-        textView.setTypeface(ResourcesCompat.getFont(this, R.font.main_font));
-        textView.setLetterSpacing(0.1f);
-        textView.setTextSize(17);
-    }
-
 
     private void filterList(String text){
         List<Exercise> filteredList = new ArrayList<>();
@@ -450,6 +400,8 @@ public class ExerciseActivity extends AppCompatActivity {
         adapter.updateDataset(filteredList);
 
     }
+
+
 
 
 } // AddedExercisesActivity ends here ==============================================================

@@ -37,22 +37,6 @@
         android:layout_margin="20dp">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/exerciseActivityResetButton"
-            android:layout_width="@dimen/exerciseActivity_buttonWidth"
-            android:layout_height="@dimen/exerciseActivity_buttonHeight"
-            android:layout_marginEnd="@dimen/exerciseActivity_buttonElementSpace"
-            android:layout_weight="1"
-
-            android:text="RESET"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:fontFamily="@font/main_font"
-
-            app:backgroundTint="@color/red"
-
-            app:cornerRadius="@dimen/exerciseActivity_buttonCornerRadius" />
-
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/exerciseActivityCreateButton"
             android:layout_width="@dimen/exerciseActivity_buttonWidth"
             android:layout_height="@dimen/exerciseActivity_buttonHeight"
