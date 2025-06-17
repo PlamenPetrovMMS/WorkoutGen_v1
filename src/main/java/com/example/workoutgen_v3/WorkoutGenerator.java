@@ -156,35 +156,35 @@ public class WorkoutGenerator {
 
             SkillLevel skillLevel = skillLevels.get(0);
 
-            int repsMin = 0, repsMax = 0;
-            int setsMin = 0, setsMax = 0;
-            int minsMin = 0, minsMax = 0;
-            int secsMin = 0, secsMax = 0;
+            int repsMultiplier = 0;
+            int setsMultiplier = 0;
+            int minutesMultiplier = 0;
+            int secondsMultiplier = 0;
 
             switch (skillLevel) {
                 case BEGINNER:
-                    repsMin = 10; repsMax = 20;
-                    setsMin = 3; setsMax = 5;
-                    minsMin = 1; minsMax = 2;
-                    secsMin = 0; secsMax = 30;
+                    repsMultiplier = 5;
+                    setsMultiplier = 3;
+                    minutesMultiplier = 1;
+                    secondsMultiplier = 2;
                     break;
                 case INTERMEDIATE:
-                    repsMin = 10; repsMax = 15;
-                    setsMin = 2; setsMax = 4;
-                    minsMin = 2; minsMax = 3;
-                    secsMin = 15; secsMax = 45;
+                    repsMultiplier = 5;
+                    setsMultiplier = 3;
+                    minutesMultiplier = 1;
+                    secondsMultiplier = 3;
                     break;
                 case ADVANCED:
-                    repsMin = 8; repsMax = 12;
-                    setsMin = 2; setsMax = 4;
-                    minsMin = 3; minsMax = 5;
-                    secsMin = 0; secsMax = 30;
+                    repsMultiplier = 4;
+                    setsMultiplier = 3;
+                    minutesMultiplier = 2;
+                    secondsMultiplier = 4;
                     break;
                 case PRO:
-                    repsMin = 5; repsMax = 8;
-                    setsMin = 1; setsMax = 3;
-                    minsMin = 4; minsMax = 6;
-                    secsMin = 15; secsMax = 59;
+                    repsMultiplier = 5;
+                    setsMultiplier = 3;
+                    minutesMultiplier = 2;
+                    secondsMultiplier = 5;
                     break;
                 default:
                     Log.e("WorkoutGenerator", "Invalid skill level.");
@@ -192,14 +192,20 @@ public class WorkoutGenerator {
             }
 
             if(exercise.getMetric() == Metric.REPS){
-                int reps = random.nextInt((repsMax - repsMin) + 1) + repsMin;
-                int sets = random.nextInt((setsMax - setsMin) + 1) + setsMin;
+                int reps = (random.nextInt(repsMultiplier) + 2) * 5;
+                int sets = random.nextInt(setsMultiplier) + 2;
                 exercise.setReps(reps);
                 exercise.setSets(sets);
             } else if (exercise.getMetric() == Metric.TIME) {
-                int sets = random.nextInt((setsMax - setsMin) + 1) + setsMin;
-                int minutes = random.nextInt((minsMax - minsMin) + 1) + minsMin;
-                int seconds = random.nextInt((secsMax - secsMin) + 1) + secsMin;
+                int sets = random.nextInt(setsMultiplier) + 1;
+                int minutes = 0;
+                int seconds = random.nextInt(8) + 3;
+
+                if(!exercise.getSkillLevelList().contains(SkillLevel.PRO)){
+                    minutes = random.nextInt( minutesMultiplier) + 1;
+                    seconds = (random.nextInt(secondsMultiplier) + 1) * 10;
+                }
+
                 exercise.setSets(sets);
                 exercise.setMinutes(minutes);
                 exercise.setSeconds(seconds);

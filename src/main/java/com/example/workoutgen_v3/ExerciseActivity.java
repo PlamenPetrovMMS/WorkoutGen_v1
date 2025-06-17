@@ -349,9 +349,12 @@ public class ExerciseActivity extends AppCompatActivity {
                     }
 
                     exercise.setName(exerciseName);
+
                     exercise.setDescription(exerciseDescription);
+
                     if(categoryList == null) categoryList = new ArrayList<>();
                     exercise.setCategoryList(categoryList);
+
                     if(muscleGroupList == null) muscleGroupList = new ArrayList<>();
                     exercise.setMuscleGroupList(muscleGroupList);
 
